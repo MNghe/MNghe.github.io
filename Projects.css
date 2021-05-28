@@ -26,4 +26,17 @@
     opacity: 1;
     text-align: left;
   }
+  .v67_33 {
+    width: 792px;
+    height: 792px;
+    background: url("../images/v67_33.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 334px;
+    left: 425px;
+    overflow: hidden;
+  }
   
