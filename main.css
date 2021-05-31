@@ -1,9 +1,20 @@
-body {background-color: rgb(113, 206, 167);
-    opacity: 100%;
-    background-image: url("https://wallpaperaccess.com/full/1567666.png");
-    background-size: cover;
-    background-repeat: no-repeat;
+body {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
   }
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
 .title {
   color: white;
@@ -31,13 +42,21 @@ body {background-color: rgb(113, 206, 167);
  height: auto;
 }
 
+.img-area {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+
 .container {
   position: relative;
-  top: 0;
-  left: 0;
-  background-color: teal;
-  width: 500px;
-  height: 600px;
+  margin: 50px;
+  /* background-color: teal; */
+  width: 304px;
+  height: 578px;
 }
 
 .column {
@@ -55,17 +74,24 @@ body {background-color: rgb(113, 206, 167);
 }
 
 .single-img {
-  position: absolute;
+  position: relative;
   top: 10px;
   left: 14px;
   z-index: 2;
 }
 
+.container:hover {
+  transform: scale(1.2,1.2);
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+
 .label {
   position: absolute;
-  /* padding: 0 20px 20px; */
-  top: 350px;
-  left: 125px;
+  top: 335px;
+  left: 51px;
   text-align: center;
   color: black;
   font-size: 200%;
@@ -80,18 +106,6 @@ body {background-color: rgb(113, 206, 167);
   color: rgb(0, 0, 0);
   z-index: 4;
 }
-
-.column {
-  position: relative;
-} */
-
-/* .single-img:hover {
-  transform: scale(1.2,1.2);
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  overflow: hidden;
-} */
 
 .footer {
   background-color: teal;
