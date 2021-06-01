@@ -24,12 +24,18 @@ body {
     text-align: center;
   }
 
+  .table {
+    background-color: rgb(89, 161, 117, 0.7);
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-bottom: 50px;
+  }
+
   .subtitle {
     color: white;
     font-size: 300%;
-    margin: 25px;
     font-weight: bold;
-    padding-left: 5vw;
+    margin-left: 5px;
   }
 
   .about {
@@ -37,8 +43,8 @@ body {
     font-family: verdana;
     font-size: 200%;
     text-align: center;
-    padding-left: 20vw;
-    padding-right: 20vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
   }
 
   .center {
@@ -56,10 +62,5 @@ body {
     color: rgb(128, 226, 189);
     font-family: verdana;
     font-size: 150%;
-  }
-  
-  .subfooter {
-    color: rgb(255, 255, 255);
-    font-size: 120%;
-    margin-left: 50px;
+    margin-bottom: 20px;
   }

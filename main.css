@@ -134,10 +134,5 @@ body {
   color: rgb(128, 226, 189);
   font-family: verdana;
   font-size: 150%;
-}
-
-.subfooter {
-  color: rgb(255, 255, 255);
-  font-size: 120%;
-  margin-left: 50px;
+  margin-bottom: 20px;
 }
