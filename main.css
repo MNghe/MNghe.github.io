@@ -103,10 +103,21 @@ body {
   overflow: hidden;
 }
 
-.label {
+.text-box {
   position: absolute;
+  top: 330px;
+  left: 40px;
+  height: 40%;
+  width: 80%;
+  z-index: 2;
+}
+
+.label {
+  position: relative;
+  /*
   top: 345px;
-  left: 48px;
+  left: 40px;
+  */
   text-align: center;
   color: black;
   font-size: 200%;
@@ -118,8 +129,10 @@ body {
 .mini {
   position: absolute;
   padding: 0 20px 20px;
+  /*
   top: 400px;
   left: 25px;
+  */
   color: rgb(0, 0, 0);
   z-index: 4;
   text-align: center;
