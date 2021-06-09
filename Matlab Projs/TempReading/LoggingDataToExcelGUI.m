@@ -98,7 +98,7 @@ function exportExcel_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 global Temp;
 % Creates the file/directory if not already existing
-folder = 'C:\Users\Michael Nghe\Documents\MATLAB\Matlab Projs\Excel';
+folder = 'C:\Users\Michael Nghe\Documents\GitHub\MNghe.github.io\Matlab Projs\TempReading';
 if ~exist(folder, 'dir')
     mkdir(folder);
 end
@@ -168,7 +168,7 @@ function Delete_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 % Path
-folder = 'C:\Users\Michael Nghe\Documents\MATLAB\Matlab Projs\Excel';
+folder = 'C:\Users\Michael Nghe\Documents\GitHub\MNghe.github.io\Matlab Projs\TempReading\Excel';
 % File name
 baseFileName = 'LoggedData.xlsx';
 fullFileName = fullfile(folder, baseFileName);
