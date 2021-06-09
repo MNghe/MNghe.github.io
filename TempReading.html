@@ -1,0 +1,104 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title> Temperature Reading </title>
+    <meta name="description" content="Portfolio">
+    <meta name="author" content="Maple">
+    <link rel="shortcut icon" type="image/x-icon" href="Home Images/face.png">
+
+    <link rel="stylesheet" href="css/styles.css?v=1.0">
+    <link rel="stylesheet" href="temp.css">
+</head>
+
+<body>
+    <div class=title>
+        Logging Sensor Data in MS EXCEL through MATLAB GUI
+    </div>
+
+    <p> This project presents a MATLAB graphical user interface based approach to save real time process data obtained
+        from a temperature sensor. The GUI allows the user to graphically view the temperature variation at the end of
+        the sensor data acquisition. As for the temperature reading, it will be in Centigrade (Celsius).</p>
+
+    <div class=domain>
+        <h1> ARDUINO CONNECTION </h1>
+        <div class=box>
+            <p>
+                <img src="Matlab Projs/TempReading/Images/PLC.jpg" style="float: right; width: 30%;" />
+                The first step in this project is to have a sensor to log data, this is done with an ELEGOO Uno R3
+                (Similiar to an Arduino Uno), that is connected to a thermistor (A resistance thermometer / A resistor
+                whose resistance is dependent on temperature). There is also a resistor (10k Ohms) in the circuit
+                design, it is based on the resistance of the thermistor.
+            </p>
+            <p>
+                <img src="https://www.pngitem.com/pimgs/m/14-146566_file-arduino-logo-svg-arduino-logo-hd-png.png"
+                    style="float: left; width: 30%; max-width: 100%;">
+                After the setup is the programming process. At the beginning of this project, I used the Web Editor
+                version of the Arduino IDE. However I experienced port connection issues, eventually leading to getting
+                the actual Arduino IDE (A free IDE). As for the code, it was found online. The code is in the (link
+                this) GitHub repository
+                with the original owner's comments.
+            </p>
+            <img class='single' src="https://eepower.com/uploads/education/resistor_color_codes_chart.png">
+        </div>
+    </div>
+
+    <div class=domain>
+        <h1> MATLAB TESTING </h1>
+        <div class=box>
+            <p>
+                <img src="https://1000logos.net/wp-content/uploads/2021/04/MATLAB-logo.png"
+                    style="float: right; width: 35%;">
+                Like the Arduino Web Editor, I tried using the MATLAB Web Editor and it did not connect well. Thus, the
+                actual software was downloaded, along with a plugin to help with the connection of the Arduino hardware.
+            </p>
+            <img class='single' src="Matlab Projs/TempReading/Images/Arduino Hardware Support.png">
+            <p>
+                <img src="Matlab Projs/TempReading/Images/Plot.png"
+                    style="float: right; width: 50%; max-width: 100%; width: 230px;">
+                For a test run, an initial script is created that does the entire process all in one run with a specific
+                amount of samples to collect. A major setback during this process was the MATLAB's fopen function that
+                claimed the ports were not available, this is because the script may encounter bugs midway through the
+                process and the program did not make it to the end where it would close all ports. Due to this, MATLAB
+                had to be restarted after each failed run in order to test new solutions. Once this was completed, the
+                next objective to work on the MATLAB GUI using GUIDE (Graphical User Interface Development Environment).
+            </p>
+        </div>
+    </div>
+
+    <div class=domain>
+        <h1> VISUAL APPLICATION </h1>
+        <div class=box>
+            <p>
+                <img src="Matlab Projs/TempReading/Images/GUI.PNG" style="float: right; width: 63%; max-width: 90%;">
+                By typing 'guide' into the command window of MATLAB, we open the developor's environment to visually
+                create the GUI along with adjusting the design and tags of each component. Making custom tags for each
+                component made it easier to keep track of each button's function when programming. An issue that was
+                encountered here was the Collect toggle button, where the process occurs in a 'while loop.' While
+                debugging, I noticed while stepping in is that the program skips checking if the while condition is
+                still true. Thus a pause function is used to all the program to check if any button functions were
+                called.
+            </p>
+
+            <p>
+                <img src="Matlab Projs/TempReading/Images/Excel.PNG"
+                    style="float: right; max-width: 50%; width: 160px;">
+                While running the Export button multiple times, I noticed that some old data/cells were still visible.
+                Eventually coming to realize that it was not an old array that was not cleared, rather, the Export
+                button overwrites whatever it can, meaning anything beyond the range of my array is still kept in those
+                cells. A simple solution to this for if anyone wanted a clean Excel file with just the most recent data,
+                I made a delete button to delete the related Excel file so that the old data does not conflict/mix with
+                the new one.
+            </p>
+        </div>
+    </div>
+
+    <div class=footer>
+        Crafted by Maple as a learning experience
+    </div>
+    
+
+</body>
+
+</html>

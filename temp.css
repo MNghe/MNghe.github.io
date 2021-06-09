@@ -1,0 +1,70 @@
+body {
+    background-color: wheat;
+}
+
+img {
+    padding: 10px;
+}
+
+.single {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    max-width: 100%;
+}
+
+.title {
+    text-align: center;
+    font-size: 200%;
+}
+
+.domain {
+    background-color: rgb(223, 160, 160);
+    position: relative;
+    max-width: 100%;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    align-content: center;
+}
+
+.box {
+    background-color: rgb(180, 231, 231);
+    max-width: 100%;
+    width: 1000px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    align-content: center;
+}
+
+h1 {
+    position: absolute;
+    top: -45px;
+    left: 20px;
+    font-weight: bold;
+    font-family: verdana;
+    font-size: 200%;
+    color: rgb(238, 95, 95);
+}
+
+p {
+    padding-top: 20px;
+    margin: 20px;
+    font-family: verdana;
+    font-size: 120%;
+    font-weight: normal;
+    padding-bottom: 10px;
+}
+
+.footer {
+    background-color: teal;
+    width: 100%;
+    text-align: center;
+    color: rgb(128, 226, 189);
+    font-family: verdana;
+    font-size: 150%;
+    margin-bottom: 20px;
+}

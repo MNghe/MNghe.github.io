@@ -176,6 +176,7 @@ fullFileName = fullfile(folder, baseFileName);
 if isfile(fullFileName)
     disp('Deleting file... ');
     delete (fullFileName);
+    disp('Deleted file');
 else
     % Exits the function since the file does not exist
     disp('No Such File Exist');
