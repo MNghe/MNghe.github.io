@@ -1,15 +1,26 @@
 clear;
 clc;
 
-filePath = "C:\Users\Michael Nghe\Documents\GitHub\MNghe.github.io\Matlab Projs\Lossless Compression\Images";
-fileName = "Original.jpg";
+% Manual filePath and file can be done here
+% filePath = "C:\Users";
+% fileName = "Original.jpg";
+
+% Gets the file name and path
+[fileName, filePath] = uigetfile();
+if (filePath == 0)
+    return;
+end
+
+% Set the the entire string path
 fileFullName = fullfile(filePath, fileName);
 array = im2double(imread(fileFullName));
 
+% Create 3 separate identical arrays
 array_red = array;
 array_green = array;
 array_blue = array;
 
+% Converts the partical 
 array_red(:, :, 1) = 0;
 array_green(:, :, 2) = 0;
 array_blue(:, :, 3) = 0;

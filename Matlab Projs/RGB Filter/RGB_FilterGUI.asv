@@ -1,3 +1,6 @@
+% A MATLAB GUI where the user can load an image, use the RGB sliders to
+% adjust the filters of the image, and then export it.
+
 function varargout = RGB_FilterGUI(varargin)
 % RGB_FILTERGUI MATLAB code for RGB_FilterGUI.fig
 %      RGB_FILTERGUI, by itself, creates a new RGB_FILTERGUI or raises the existing
@@ -72,7 +75,6 @@ function varargout = RGB_FilterGUI_OutputFcn(hObject, eventdata, handles)
 % Get default command line output from handles structure
 varargout{1} = handles.output;
 
-
 % --- Executes on button press in loadOriginal.
 function loadOriginal_Callback(hObject, eventdata, handles)
 % hObject    handle to loadOriginal (see GCBO)
@@ -80,8 +82,15 @@ function loadOriginal_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 global array;
 disp("Loading Image... ");
+% Gets user input of the directory location and file name
 [fileName, Path] = uigetfile();
+% In case the user decides not to choose a file
+if (Path == 0)
+    disp("Loading Canceled")
+    return;
+end
 fileFullName = fullfile(Path, fileName);
+% Converts values to double precision value
 array = im2double(imread(fileFullName));
 imshow(array, 'Parent', handles.axes1);
 imshow(array, 'Parent', handles.axes2);
@@ -101,8 +110,8 @@ global statusG;
 global statusB;
 statusR = get(hObject, 'Value');
 temp = array;
-temp(:, :, 1) = array(:,:,1).*statusR;
-temp(:, :, 2) = array(:,:,2).*statusG;
+temp(:, :, 1) = array(:,:,1)*statusR;
+temp(:, :, 2) = array(:,:,2)*statusG;
 temp(:, :, 3) = array(:,:,3).*statusB;
 imshow(temp, 'Parent', handles.axes2);
 set(handles.textR, 'String', num2str(statusR));
@@ -169,7 +178,7 @@ temp(:, :, 1) = array(:,:,1).*statusR;
 temp(:, :, 2) = array(:,:,2).*statusG;
 temp(:, :, 3) = array(:,:,3).*statusB;
 imshow(temp, 'Parent', handles.axes2);
-set(handles.textB, 'String', num2str(statusB));
+set(handles.textB, 'String', num2str(statusB))
 
 % --- Executes during object creation, after setting all properties.
 function sliderB_CreateFcn(hObject, eventdata, handles)
