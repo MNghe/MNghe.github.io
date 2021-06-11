@@ -1,4 +1,7 @@
+/*
 body {
+  margin: 0px;
+  padding: 0px;
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
@@ -15,46 +18,63 @@ body {
     background-position: 0% 50%;
   }
 }
+*/
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #393939;
+}
 
 .title {
+  position: relative;
   color: white;
   margin: 50px;
   font-size: 500%;
   font-weight: bold;
   text-align: center;
+  z-index: 2;
 }
 
 .about {
+  position: relative;
   color: rgb(255, 255, 255);
   font-family: verdana;
   font-size: 200%;
   text-align: center;
   padding-left: 20vw;
   padding-right: 20vw;
+  z-index: 2;
 }
 
 .sideTitle {
   color: white;
+  position: relative;
   font-size: 400%;
   margin: 20px;
   font-weight: bold;
   padding-left: 5vw;
+  z-index: 2;
 }
 
 .subTitle {
+  position: relative;
   color: white;
   font-size: 250%;
   margin-left: 20px;
   font-weight: normal;
   padding-left: 5vw;
   padding-bottom: 20px;
+  z-index: 2;
 }
 
 .myFace {
+ position: relative;
  padding-bottom: 25px;
  text-align: center;
  width: 100%;
  height: auto;
+ z-index: 2;
 }
 
 .img-area {
@@ -64,6 +84,7 @@ body {
   align-items: center;
   justify-content: center;
   padding-bottom: 50px;
+  z-index: 2;
 }
 
 .container {
@@ -72,27 +93,28 @@ body {
   /* background-color: teal; */
   width: 304px;
   height: 578px;
+  z-index: 2;
 }
 
 .column {
   position: absolute;
   top: 10px;
   left: 10px;
-  z-index: 1;
+  z-index: 2;
 }
 
 .icon {
   position: absolute;
   top: 255px;
   left: 125px;
-  z-index: 3;
+  z-index: 4;
 }
 
 .single-img {
   position: relative;
   top: 10px;
   left: 14px;
-  z-index: 2;
+  z-index: 3;
 }
 
 .container:hover {
@@ -101,6 +123,7 @@ body {
   -moz-transition: all 0.5s ease;
   transition: all 0.5s ease;
   overflow: hidden;
+  z-index: 2
 }
 
 .text-box {
@@ -109,7 +132,7 @@ body {
   left: 40px;
   height: 40%;
   width: 80%;
-  z-index: 2;
+  z-index: 3;
 }
 
 .label {
@@ -140,7 +163,26 @@ body {
   font-weight: normal;
 }
 
+.footer_wrapper {
+  position: relative;
+  max-width: 100%;
+  width: 3000px;
+  padding-top: 100px;
+  z-index: 1;
+}
+
 .footer {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  max-width: 100%;
+  width: 100vw;
+  z-index: 1;
+}
+
+.footer_text {
+  position: absolute;
+  bottom: 30px;
   background-color: teal;
   width: 100%;
   text-align: center;
@@ -148,4 +190,5 @@ body {
   font-family: verdana;
   font-size: 150%;
   margin-bottom: 20px;
+  z-index: 2;
 }
