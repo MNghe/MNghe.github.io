@@ -81,6 +81,12 @@ function loadOriginal_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 global array;
+global statusR;
+global statusG;
+global statusB;
+statusR = 1;
+statusG = 1;
+statusB = 1;
 disp("Loading Image... ");
 % Gets user input of the directory location and file name
 [fileName, Path] = uigetfile();
@@ -113,8 +119,8 @@ global statusB;
 statusR = get(hObject, 'Value');
 temp = array;
 % Applies the values of the RGB filters onto the array
-temp(:, :, 1) = array(:,:,1)*statusR;
-temp(:, :, 2) = array(:,:,2)*statusG;
+temp(:, :, 1) = array(:,:,1).*statusR;
+temp(:, :, 2) = array(:,:,2).*statusG;
 temp(:, :, 3) = array(:,:,3).*statusB;
 % Update edited image
 imshow(temp, 'Parent', handles.axes2);
@@ -209,7 +215,7 @@ global statusG;
 global statusB;
 % Obtains the directory's path of where the user wants the image to be
 % saved at
-path = uigetdir('C:\\Users');
+path = uigetdir('Documents');
 temp = array;
 temp(:, :, 1) = array(:,:,1).*statusR;
 temp(:, :, 2) = array(:,:,2).*statusG;
@@ -220,6 +226,9 @@ imshow(temp);
 fileFullName = string(fullfile(path, filename));
 hgsave(Exported, fileFullName);
 
+
+% IF the file name is set to default, it will create an Images.fig where
+% the script is located
 function edit1_Callback(hObject, eventdata, handles)
 % hObject    handle to edit1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -230,6 +239,9 @@ function edit1_Callback(hObject, eventdata, handles)
 global filename;
 % Get the user's desired file name
 filename = get(hObject, 'String');
+if (filename == null)
+    return;
+end
 
 % --- Executes during object creation, after setting all properties.
 function edit1_CreateFcn(hObject, eventdata, handles)
