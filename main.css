@@ -151,14 +151,16 @@ body {
 
 .mini {
   position: absolute;
-  padding: 0 20px 20px;
   /*
   top: 400px;
   left: 25px;
   */
+  padding-top: 10px;
   color: rgb(0, 0, 0);
   z-index: 4;
   text-align: center;
+  max-width: 100%;
+  width: 304px;
   font-size: 150%;
   font-weight: normal;
 }
