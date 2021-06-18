@@ -59,46 +59,25 @@
                 The first objective is seeing how possible it is to influence the arrays' values, which eventually came
                 to converting the partial matrix into zero. To see the full impact, I made sure to create three separate
                 identical arrays in which I adjusted a particular matrix for each that would filter out the Red, Green,
-                and Blue respectively. Once that was finished, I used the tight_subplot function to close the gaps
+                and Blue respectively. To accomplish this, I installed an Image Processing Toolbox to perform image
+                processing and analysis. Once that was finished, I used the tight_subplot function to close the gaps
                 between the figures and found a way to make the image importing process easier for other users.
             </p>
-            <img class='single' src="Matlab Projs/RGB Filter/Images/AddOn.PNG" style = "width: 70%; max-width: 100%">
-            <p>
-                <img src="Matlab Projs/RGB Filter/Images/result.PNG"
-                    style="float: right; width: 50%; max-width: 100%; width: 230px;">
-                For a test run, an initial script is created that does the entire process all in one run with a specific
-                amount of samples to collect. A major setback during this process was the MATLAB's fopen function that
-                claimed the ports were not available, this is because the script may encounter bugs midway through the
-                process and the program did not make it to the end where it would close all ports. Due to this, MATLAB
-                had to be restarted after each failed run in order to test new solutions. Once this was completed, the
-                next objective to work on the MATLAB GUI using GUIDE (Graphical User Interface Development Environment).
-            </p>
+            <img class='single' src="Matlab Projs/RGB Filter/Images/AddOn.PNG" style="width: 70%; max-width: 100%">
+            <img class=single src="Matlab Projs/RGB Filter/Images/result.PNG">
         </div>
     </div>
 
     <div class=domain>
         <h1 style="color: #70DBD4"> VISUAL APPLICATION </h1>
-        <div class=box>
+        <div class=box style="padding-bottom: 15px;">
             <p>
-                <img src="Matlab Projs/TempReading/Images/GUI.PNG" style="float: right; width: 63%; max-width: 90%;">
+                <img src="Matlab Projs/RGB Filter/Images/GUI.PNG" style="margin-left: 20px; float: right; width: 300px; max-width: 80%; max-height: 100%; height: auto; padding: 0px;">
                 By typing 'guide' into the command window of MATLAB, we open the developor's environment to visually
                 create the GUI along with adjusting the design and tags of each component. Making custom tags for each
-                component made it easier to keep track of each button's function when programming. An issue that was
-                encountered here was the Collect toggle button, where the process occurs in a 'while loop.' While
-                debugging, I noticed while stepping in is that the program skips checking if the while condition is
-                still true. Thus a pause function is used to all the program to check if any button functions were
-                called.
-            </p>
-
-            <p>
-                <img src="Matlab Projs/TempReading/Images/Excel.PNG"
-                    style="float: right; max-width: 50%; width: 160px;">
-                While running the Export button multiple times, I noticed that some old data/cells were still visible.
-                Eventually coming to realize that it was not an old array that was not cleared, rather, the Export
-                button overwrites whatever it can, meaning anything beyond the range of my array is still kept in those
-                cells. A simple solution to this for if anyone wanted a clean Excel file with just the most recent data,
-                I made a delete button to delete the related Excel file so that the old data does not conflict/mix with
-                the new one.
+                component made it easier to keep track of each button's function when programming. An issue occurred
+                where the toggle states were not being registered until all three toggles have been changed, an easy
+                solution to this was to set an initial value for these global variables.
             </p>
         </div>
     </div>

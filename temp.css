@@ -49,6 +49,7 @@ img {
 }
 
 .box {
+    position: relative;
     background-color: #494949;
     max-width: 100%;
     width: 1000px;
