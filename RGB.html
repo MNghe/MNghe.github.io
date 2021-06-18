@@ -29,11 +29,9 @@
     <div class=domain>
         <h1 style="color: #70DBD4"> THE OPERATION </h1>
         <div class=box>
-            <p> This project presents a MATLAB graphical user interface based approach to save real time process data
-                obtained
-                from a temperature sensor. The GUI allows the user to graphically view the temperature variation at the
-                end of
-                the sensor data acquisition. As for the temperature reading, it will be in Centigrade (Celsius).
+            <p> This project presents a MATLAB graphical user interface based approach to filter the three planes of a
+                3-dimensional image array. The project explores the idea of manipulating a particular matrix, along with
+                exploring methods to make it user friendly for importing and exporting images.
             </p>
         </div>
     </div>
@@ -42,22 +40,13 @@
         <h1 style="color: #70DBD4"> THE OBSERVATIONS </h1>
         <div class=box>
             <p>
-                <img src="Matlab Projs/TempReading/Images/PLC.jpg" style="float: right; width: 30%;" />
-                The first step in this project is to have a sensor to log data, this is done with an ELEGOO Uno R3
-                (Similiar to an Arduino Uno), that is connected to a thermistor (A resistance thermometer / A resistor
-                whose resistance is dependent on temperature). There is also a resistor (10k Ohms) in the circuit
-                design, it is based on the resistance of the thermistor.
+                <img src="Matlab Projs/RGB Filter/Images/Original.jpg"
+                    style="float: right; width: 100px; height: auto; max-width: 100%; max-height: 100%; padding: 0px; padding-left: 20px;">
+                Through observation after loading an image into MATLAB through the imread function, I found that the
+                Original.jpg was represented as a 640x640x3 array. Then the realization came that the 3 signifies the
+                Red, Green, Blue color values. After experimenting with masking the image, the idea came where I may be
+                able to adjust specific sections of the array.
             </p>
-            <p>
-                <img src="https://www.pngitem.com/pimgs/m/14-146566_file-arduino-logo-svg-arduino-logo-hd-png.png"
-                    style="float: left; width: 30%; max-width: 100%;">
-                After the setup is the programming process. At the beginning of this project, I used the Web Editor
-                version of the Arduino IDE. However I experienced port connection issues, eventually leading to getting
-                the actual Arduino IDE (A free IDE). As for the code, it was found online. The code is in the (link
-                this) GitHub repository
-                with the original owner's comments.
-            </p>
-            <img class='single' src="https://eepower.com/uploads/education/resistor_color_codes_chart.png">
         </div>
     </div>
 
@@ -66,13 +55,16 @@
         <div class=box>
             <p>
                 <img src="https://1000logos.net/wp-content/uploads/2021/04/MATLAB-logo.png"
-                    style="float: right; width: 35%;">
-                Like the Arduino Web Editor, I tried using the MATLAB Web Editor and it did not connect well. Thus, the
-                actual software was downloaded, along with a plugin to help with the connection of the Arduino hardware.
+                    style="float: right; width: 35%; background-color: white;">
+                The first objective is seeing how possible it is to influence the arrays' values, which eventually came
+                to converting the partial matrix into zero. To see the full impact, I made sure to create three separate
+                identical arrays in which I adjusted a particular matrix for each that would filter out the Red, Green,
+                and Blue respectively. Once that was finished, I used the tight_subplot function to close the gaps
+                between the figures and found a way to make the image importing process easier for other users.
             </p>
-            <img class='single' src="Matlab Projs/TempReading/Images/Arduino Hardware Support.png">
+            <img class='single' src="Matlab Projs/RGB Filter/Images/AddOn.PNG" style = "width: 70%; max-width: 100%">
             <p>
-                <img src="Matlab Projs/TempReading/Images/Plot.png"
+                <img src="Matlab Projs/RGB Filter/Images/result.PNG"
                     style="float: right; width: 50%; max-width: 100%; width: 230px;">
                 For a test run, an initial script is created that does the entire process all in one run with a specific
                 amount of samples to collect. A major setback during this process was the MATLAB's fopen function that
