@@ -85,6 +85,10 @@ p {
 }
 
 table, th, td {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    background-color: rgba(255, 255, 255, .8);
     font-size: 120%;
     font-family: verdana;
     font-weight: normal;
