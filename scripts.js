@@ -6,9 +6,10 @@ document.write('\
     <div class="dropdown-content">\
       <a href="index.html">Home</a>\
       <a href="HowWebsite.html">How I Made This</a>\
-      <a href="AWSprojects.html">AWS Projects</a>\
       <a href="TempReading.html">Logging Sensor Data</a>\
       <a href="RGB.html">RGB Filter</a>\
     </div>\
   </div>\
 ');
+
+// <a href="AWSprojects.html">AWS Projects</a>\
